@@ -1,0 +1,118 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+  font-family: Arial, sans-serif; /* Default font */
+}
+
+/* Import the beautiful calligraphy font */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.text-above-track {
+  position: fixed; /* Fixes the position so it doesn’t scroll */
+  top: 20px; /* Adjust vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white; /* Text color */
+  font-size: 36px; /* Text size */
+  font-family: 'Great Vibes', cursive; /* Elegant calligraphy font */
+  font-weight: 400; /* Font weight for an elegant appearance */
+  z-index: 10001; /* Ensure it’s above other elements */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Optional glistening effect */
+  animation: glisten 2s infinite; /* Glistening animation */
+}
+
+@keyframes glisten {
+  0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+  50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Existing styles for your image track and links */
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  user-select: none; /* Prevent image highlighting */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+#image-track > .image:hover {
+  transform: scale(1.1); /* Slightly expand the image on hover */
+}
+
+body.menu-toggled > .meta-link > span {
+  color: rgb(30, 30, 30);
+}
+
+#source-link {
+  bottom: 60px;
+}
+
+#source-link > i {
+  color: rgb(94, 106, 210);
+}
+
+#yt-link > i {
+  color: rgb(239, 83, 80);
+}
+
+.meta-link {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  bottom: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;  
+  display: inline-flex;
+  gap: 5px;
+  left: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  text-decoration: none;
+  transition: background-color 400ms, border-color 400ms;
+  z-index: 10000;
+}
+
+.meta-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link > i, .meta-link > span {
+  height: 20px;
+  line-height: 20px;
+}
+
+.meta-link > span {
+  color: white;
+  font-family: 'Great Vibes', cursive;
+  font-weight: 500;
+}
